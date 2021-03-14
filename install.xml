@@ -16,11 +16,16 @@
 									'href'     => $this->url->link('design/layout/edit', 'user_token=' . $this->session->data['user_token'] . '&layout_id=1', true),
 									'children' => array()
 								);
+								$kreativan[] = array(
+									'name'	   => 'Custom Admin Page',
+									'href'     => $this->url->link('common/kreativan_page', 'user_token=' . $this->session->data['user_token'], true),
+									'children' => array()
+								);
 								$kreativan_module_db = $this->db->query("SELECT * FROM `" . DB_PREFIX . "module` WHERE `code` = 'kreativan' ORDER BY `name`");
 								if($kreativan_module_db->num_rows > 0) {
 									$kreativan_module_id = $kreativan_module_db->row['module_id'];
 									$kreativan[] = array(
-										'name'	   => 'Module Blueprint',
+										'name'	   => 'Custom Module',
 										'href'     => $this->url->link('extension/module/kreativan', 'user_token=' . $this->session->data['user_token'] . '&module_id=' . $kreativan_module_id, true),
 										'children' => array()
 									);
