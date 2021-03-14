@@ -1,5 +1,5 @@
 # Opencart Custom Admin Menu
-This will add custom menu item in admin sidebar.
+This will add custom menu item in admin sidebar. tested on Opencart `Version 3.0.3.7`.
 
 ### How to install?
 
