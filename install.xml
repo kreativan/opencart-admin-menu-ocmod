@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+    <name>Kreativan</name>
+    <version>1.0</version>
+    <author>Ivan Milincic</author>
+    <link>http://kreativan.dev</link>
+    <code>kreativan_admin_menu</code>
+    <description>Kreativan admin menu</description>
+    <file path="admin/controller/common/column_left.php">
+        <operation>
+            <search><![CDATA[ $catalog = array(); ]]></search>
+            <add position="before"><![CDATA[
+								$kreativan = array();
+								$kreativan[] = array(
+									'name'	   => 'Homepage Layout',
+									'href'     => $this->url->link('design/layout/edit', 'user_token=' . $this->session->data['user_token'] . '&layout_id=1', true),
+									'children' => array()
+								);
+								$kreativan[] = array(
+									'name'	   => 'Latest Products',
+									'href'     => $this->url->link('extension/module/kreativan', 'user_token=' . $this->session->data['user_token'], true),
+									'children' => array()
+								);
+								$data['menus'][] = array(
+									'id'       => 'kreativan-menu',
+									'icon'	   => 'fa-html5',
+									'name'	   => 'Kreativan',
+									'href'     => '',
+									'children' => $kreativan
+								);
+            ]]></add>
+        </operation>
+    </file>
+
+</modification>
